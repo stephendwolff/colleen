@@ -109,8 +109,9 @@ function connect(){
     if(pusherConnection!=null){
         disconnect();
     }
+    // set 'pusherConnection' to be a mysql connection to db
     pusherConnection = mysql.createConnection(WNU_DB_URL+'?timezone=+0000');
-    return pusherConnection;
+    //return pusherConnection;
 }
 
 function timeSeriesConnect() {
@@ -119,7 +120,7 @@ function timeSeriesConnect() {
         timeSeriesDisconnect();
     }
     timeSeriesConnection = mysql.createConnection(WNU_DB_URL+'?timezone=+0000');
-    return timeSeriesConnection;
+    //return timeSeriesConnection;
 }
 
 
@@ -182,6 +183,7 @@ var connectDBTimeout = function(){
     console.log("Connect Database:", new Date());
     var timeout = nconf.get("timeout");
 
+    // reconnect to mysql db every 'timeout' (30000)
     gDBTimeoutObj = setTimeout(connectDB,timeout);
 };
 
@@ -207,7 +209,10 @@ function startTimeseriesScheduler(){
 
 
 function connectDB(){
+    // set up mysql pusherConnection object
     connect();
+
+    // actually try and connect to db
     pusherConnection.connect(function(err) {
         if(err) {
             onError('Worker: error when connecting to db', err);
@@ -247,11 +252,16 @@ var socket = new Pusher(PUSHER_API_KEY, { cluster: PUSHER_CLUSTER });
 var channel = socket.subscribe('panoptes');
 //console.log(gProjectListById.keys());
 function startPusherListening() {
+
+    // bind to Zooniverse Classification channel
     channel.bind('classification',
+
+        // on incoming classification, process record
         function (record) {
 
             //console.log("classification event: " + JSON.stringify(record));
 
+            // example record:
             // {
             //      "classification_id":"122370232",
             //      "project_id":"5074",
@@ -270,20 +280,25 @@ function startPusherListening() {
             //          "longitude":5.475
             //      }
             //  }
+
             var projectId = record['project_id'];
             var projectData = gProjectListById["id_" + projectId];
             var projectName = projectId;
-            //        var projectZoonName = projectId;
+
+            // var projectZoonName = projectId;
             if (projectData !== undefined) {
                 projectName = gProjectListById["id_" + projectId]['name'];
-                //            projectZoonName = gProjectListById["id_" + projectId]['name'];
+                // projectZoonName = gProjectListById["id_" + projectId]['name'];
             }
-            //        console.log(projectId, gProjectIdList.includes(parseInt(projectId)));
+
+            // console.log(projectId, gProjectIdList.includes(parseInt(projectId)));
             // once we have data from a project we want, add to classifications table, and remove old data:
             if (gProjectIdList.includes(parseInt(projectId))) {
                 var fields = ['id', 'created_at', 'user_id', 'project', 'country_code', 'region', 'city_name', 'latitude', 'longitude'];//, 'zoon_project', 'zoon_userid'];
                 var inserts = [];
                 var values = [];
+
+                // build up list of values
                 _.each(fields, function (field, index) {
                     var value = 'NULL';
                     if (field === 'project') {
@@ -327,8 +342,13 @@ function startPusherListening() {
 
                 var insertStr = inserts.join(',');
                 //            console.log(insertStr);
+
+                // build query
                 var pusherInsertQuery = "REPLACE INTO " + gClsTable + " (`id`,`created_at`,`user_id`,`project`,`country`,`region`,`city`,`latitude`,`longitude`) VALUES" + insertStr;
+
                 // ,`zoon_project`, `zoon_userid`
+
+                // run insert/replace query
                 if (pusherConnection != null) {
                     pusherConnection.query(pusherInsertQuery,
                         function (err, rows) {
@@ -698,7 +718,7 @@ function updateTimeSeriesFromArchive(){
     var classificationInterval = 60; // secs
     var timeout = classificationInterval*1000;
 
-    var updateCount = 0, nUpdates = 60;
+                    var updateCount = 0, nUpdates = 60;
 
     // projects: ["andromeda","bat_detective","cyclone_center","galaxy_zoo","milky_way","planet_four","sea_floor","serengeti"]
     // Initial run time: 181.74 secs. 2784 rows.
