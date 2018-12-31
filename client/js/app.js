@@ -232,7 +232,9 @@ ZN.App.prototype = {
 
         ZN.soundengine.init(config, function(err, progress, projectId, loadCounter){
             if(err){
-                window.alert('Soundengine failed to load:'+ err.message);
+                if(this.debug) {
+                    console.log('Soundengine failed to load:' + err.message);
+                }
                 return;
             }
 
