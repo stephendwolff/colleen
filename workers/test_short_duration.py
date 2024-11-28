@@ -16,7 +16,7 @@ pp = pprint.PrettyPrinter(indent=4)
 
 
 def get_json_from_api(zoon_api_request_url, payload, headers):
-    
+
     logger.info('zoon_api_request_url is %s' % zoon_api_request_url)
     logger.info('payload is %s' % payload)
     response = requests.get(zoon_api_request_url, params=payload, headers=headers)
@@ -27,7 +27,7 @@ def get_json_from_api(zoon_api_request_url, payload, headers):
     else:
         return None
 
-                          
+
 
 
 def thewholeshebang():
@@ -40,10 +40,10 @@ def thewholeshebang():
     now_ms = int(round(time.time() * 1000))
     yesterday_ms = now_ms - duration
     tomorrow_ms = now_ms + duration
-    zoon_event_api_request_url = 'http://event.zooniverse.org/classifications'
-    zoon_live_api_request_url = 'http://live.zooniverse.org/'
+    zoon_event_api_request_url = 'https://event.zooniverse.org/classifications'
+    zoon_live_api_request_url = 'https://live.zooniverse.org/'
 
-    headers = {'X_REQUESTED_WITH': 'XMLHttpRequest', 
+    headers = {'X_REQUESTED_WITH': 'XMLHttpRequest',
                'ACCEPT': 'application/vnd.zooevents.v1+json',}
 
 
@@ -62,7 +62,7 @@ def thewholeshebang():
             if json_obj is None:
                 num_results = 0
                 logger.info("api request returned nothing")
-            else: 
+            else:
                 num_results = len(json_obj)
                 total_results = total_results + num_results
                 logger.info("got json from api there are %d classifications" % num_results)

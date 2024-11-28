@@ -23,7 +23,7 @@ See weneedus.org
 ###dev on Mac
 1. Clone project from github.
 
-1. Install MySQL Community Server (download from http://dev.mysql.com/downloads/mysql/) if not already on your machine.
+1. Install MySQL Community Server (download from https://dev.mysql.com/downloads/mysql/) if not already on your machine.
 
 1. Run MySQL server. You will be prompted for a password. It wants the admin password for your mac:
 
@@ -34,7 +34,7 @@ See weneedus.org
 
 1. Install heroku toolbelt for mac from https://toolbelt.heroku.com/
 
-1. Install Node.js for mac from http://nodejs.org/download/
+1. Install Node.js for mac from https://nodejs.org/download/
 
 1. From the root directory of the project install node dependencies by running:
 
@@ -59,13 +59,13 @@ See weneedus.org
 
    	$ foreman start
 
-1. Visit app in browser at http://localhost:5000/chart.html
+1. Visit app in browser at https://localhost:5000/chart.html
 
 1. For animation dev, run this in a separate console window to auto compile changes to the JSON and SVG files
 
         $ supervisor -n exit -w client/data/src -e json,svg client/util/compile_assets.js
 
-1. Visit app in browser at http://localhost:5000/index.html
+1. Visit app in browser at https://localhost:5000/index.html
 
 ###production on heroku
 1. Create an account at heroku.com
@@ -75,10 +75,10 @@ See weneedus.org
         $ heroku create
         
         Creating sharp-rain-871... done, stack is cedar
-        http://sharp-rain-871.herokuapp.com/ | git@heroku.com:sharp-rain-871.git
+        https://sharp-rain-871.herokuapp.com/ | git@heroku.com:sharp-rain-871.git
         Git remote heroku added			
 
-1. If you do not want to use an existing database then provision a cleardb addon for your heroku app http://dashboard.heroku.com/apps/YOURAPPNAME, you will be given a db connection string to use which contains a user, password, dbhost and dbname. If you are a Team Colleen member you can use the one in the Technical Resources document on Google Drive. You can initialise the tables by running
+1. If you do not want to use an existing database then provision a cleardb addon for your heroku app https://dashboard.heroku.com/apps/YOURAPPNAME, you will be given a db connection string to use which contains a user, password, dbhost and dbname. If you are a Team Colleen member you can use the one in the Technical Resources document on Google Drive. You can initialise the tables by running
 
         $ mysql -u <username> -h <hostaddress> -p <dbname> < data/zoon_tables.sql
 
@@ -90,7 +90,7 @@ See weneedus.org
         $ heroku config:set NODE_ENV=prod
         $ git push heroku master
 
-1. Visit your app at http://YOURAPPNAME
+1. Visit your app at https://YOURAPPNAME
 
 
 

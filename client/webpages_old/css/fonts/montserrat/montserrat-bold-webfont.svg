@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
-<svg xmlns="http://www.w3.org/2000/svg">
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="https://www.w3.org/2000/svg">
 <metadata></metadata>
 <defs>
 <font id="montserratbold" horiz-adv-x="1525" >
@@ -241,4 +241,4 @@
 <glyph unicode="&#xfb01;" horiz-adv-x="1421" d="M74 870v222h129v67q0 180 109.5 285.5t272.5 105.5t296 -123l-111 -206q-68 78 -149 77q-47 0 -78 -33.5t-31 -99.5v-73h266v-222h-266v-870h-309v870h-129zM942 1370q0 76 52.5 128t128 52t128 -52t52.5 -128t-52.5 -128t-128 -52t-128 52t-52.5 128zM969 0v1102h307 v-1102h-307z" />
 <glyph unicode="&#xfb02;" horiz-adv-x="1421" d="M74 870v222h129v67q0 180 109.5 285.5t272.5 105.5t296 -123l-111 -206q-68 78 -149 77q-47 0 -78 -33.5t-31 -99.5v-73h266v-222h-266v-870h-309v870h-129zM969 0v1520h307v-1520h-307z" />
 </font>
-</defs></svg> 
+</defs></svg>

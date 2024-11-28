@@ -24,7 +24,7 @@ app.use('/audio', express.static(__dirname +'/public/audio'));
 
 app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
 //bodyParser is deprecated
-//See http://stackoverflow.com/questions/20390513/heroku-foreman-exits-on-express-js-bodyparser-call
+//See https://stackoverflow.com/questions/20390513/heroku-foreman-exits-on-express-js-bodyparser-call
 //app.use(express.bodyParser());
 app.use(express.json());
 app.use(express.urlencoded());

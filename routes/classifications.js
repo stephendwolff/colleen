@@ -268,8 +268,8 @@ exports.getLastClassifications = function(req, res) {
 
 exports.getClassificationInterval = function(req, res) {
 
-    // http://localhost:5000/classifications/from/1346457600/to/1348876800/interval/604800 // week interval
-    // http://localhost:5000/classifications/from/1348790400/to/1348876800/interval/3600 // hour interval
+    // https://localhost:5000/classifications/from/1346457600/to/1348876800/interval/604800 // week interval
+    // https://localhost:5000/classifications/from/1348790400/to/1348876800/interval/3600 // hour interval
 
     var from = parseInt(req.params.from); // unixTime
     var to = parseInt(req.params.to); // unixTime
@@ -282,7 +282,7 @@ exports.getClassificationInterval = function(req, res) {
     }
     console.log('from: ' + from + ' to: ' + to, ' interval:' + interval);
 
-    //http://stackoverflow.com/questions/2579803/group-mysql-data-into-arbitrarily-sized-time-buckets
+    //https://stackoverflow.com/questions/2579803/group-mysql-data-into-arbitrarily-sized-time-buckets
 
     var classificationsTable = 'classifications';
     //var classificationsTable = 'classifications_archive';

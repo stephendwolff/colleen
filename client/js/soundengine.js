@@ -1683,9 +1683,9 @@ exports.colors = [
  */
 
 function useColors() {
-  // is webkit? http://stackoverflow.com/a/16459606/376773
+  // is webkit? https://stackoverflow.com/a/16459606/376773
   return ('WebkitAppearance' in document.documentElement.style) ||
-    // is firebug? http://stackoverflow.com/a/398120/376773
+    // is firebug? https://stackoverflow.com/a/398120/376773
     (window.console && (console.firebug || (console.exception && console.table))) ||
     // is firefox >= v31?
     // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
@@ -2108,11 +2108,11 @@ function plural(ms, n, name) {
 }
 
 },{}],6:[function(require,module,exports){
-// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
+// https://wiki.commonjs.org/wiki/Unit_Testing/1.0
 //
 // THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
 //
-// Originally from narwhal.js (http://narwhaljs.org)
+// Originally from narwhal.js (https://narwhaljs.org)
 // Copyright (c) 2009 Thomas Robinson <280north.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -2970,7 +2970,7 @@ function inspect(obj, opts) {
 exports.inspect = inspect;
 
 
-// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
+// https://en.wikipedia.org/wiki/ANSI_escape_code#graphics
 inspect.colors = {
   'bold' : [1, 22],
   'italic' : [3, 23],
@@ -3061,7 +3061,7 @@ function formatValue(ctx, value, recurseTimes) {
   }
 
   // IE doesn't make error fields non-enumerable
-  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
+  // https://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
   if (isError(value)
       && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
     return formatError(value);
@@ -3411,12 +3411,12 @@ function hasOwnProperty(obj, prop) {
 (function (global){
 /**
  * @license
- * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+ * Lo-Dash 2.4.1 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern -o ./dist/lodash.js`
- * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+ * Copyright 2012-2013 The Dojo Foundation <https://dojofoundation.org/>
+ * Based on Underscore.js 1.5.2 <https://underscorejs.org/LICENSE>
  * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <http://lodash.com/license>
+ * Available under MIT license <https://lodash.com/license>
  */
 ;(function() {
 
@@ -3458,7 +3458,7 @@ function hasOwnProperty(obj, prop) {
 
   /**
    * Used to match ES6 template delimiters
-   * http://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-string-literals
+   * https://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-string-literals
    */
   var reEsTemplate = /\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g;
 
@@ -3689,7 +3689,7 @@ function hasOwnProperty(obj, prop) {
     // `a` and `b`. See https://github.com/jashkenas/underscore/pull/1247
     //
     // This also ensures a stable sort in V8 and other engines.
-    // See http://code.google.com/p/v8/issues/detail?id=90
+    // See https://code.google.com/p/v8/issues/detail?id=90
     return a.index - b.index;
   }
 
@@ -3844,7 +3844,7 @@ function hasOwnProperty(obj, prop) {
     // Avoid issues with some ES3 environments that attempt to use values, named
     // after built-in constructors like `Object`, for the creation of literals.
     // ES5 clears this up by stating that literals must use built-in constructors.
-    // See http://es5.github.io/#x11.1.5.
+    // See https://es5.github.io/#x11.1.5.
     context = context ? _.defaults(root.Object(), context, _.pick(root, contextProps)) : root;
 
     /** Native constructor references */
@@ -4121,7 +4121,7 @@ function hasOwnProperty(obj, prop) {
 
       function bound() {
         // `Function#bind` spec
-        // http://es5.github.io/#x15.3.4.5
+        // https://es5.github.io/#x15.3.4.5
         if (partialArgs) {
           // avoid `arguments` object deoptimizations by using `slice` instead
           // of `Array.prototype.slice.call` and not assigning `arguments` to a
@@ -4130,7 +4130,7 @@ function hasOwnProperty(obj, prop) {
           push.apply(args, arguments);
         }
         // mimic the constructor's `return` behavior
-        // http://es5.github.io/#x13.2.2
+        // https://es5.github.io/#x13.2.2
         if (this instanceof bound) {
           // ensure `new bound` is an instance of `func`
           var thisBinding = baseCreate(func.prototype),
@@ -4484,7 +4484,7 @@ function hasOwnProperty(obj, prop) {
         return false;
       }
       // exit early for `null` and `undefined` avoiding ES3's Function#call behavior
-      // http://es5.github.io/#x15.3.4.4
+      // https://es5.github.io/#x15.3.4.4
       if (a == null || b == null) {
         return a === b;
       }
@@ -4517,7 +4517,7 @@ function hasOwnProperty(obj, prop) {
 
         case regexpClass:
         case stringClass:
-          // coerce regexes to strings (http://es5.github.io/#x15.10.6.4)
+          // coerce regexes to strings (https://es5.github.io/#x15.10.6.4)
           // treat string primitives and their corresponding object instances as equal
           return a == String(b);
       }
@@ -4548,7 +4548,7 @@ function hasOwnProperty(obj, prop) {
       }
       // assume cyclic structures are equal
       // the algorithm for detecting cyclic structures is adapted from ES 5.1
-      // section 15.12.3, abstract operation `JO` (http://es5.github.io/#x15.12.3)
+      // section 15.12.3, abstract operation `JO` (https://es5.github.io/#x15.12.3)
       var initedStack = !stackA;
       stackA || (stackA = getArray());
       stackB || (stackB = getArray());
@@ -5038,7 +5038,7 @@ function hasOwnProperty(obj, prop) {
      * Though the `>` character is escaped for symmetry, characters like `>` and `/`
      * don't require escaping in HTML and have no special meaning unless they're part
      * of a tag or an unquoted attribute value.
-     * http://mathiasbynens.be/notes/ambiguous-ampersands (under "semi-related fun fact")
+     * https://mathiasbynens.be/notes/ambiguous-ampersands (under "semi-related fun fact")
      */
     var htmlEscapes = {
       '&': '&amp;',
@@ -5174,7 +5174,7 @@ function hasOwnProperty(obj, prop) {
      * Note: This method is loosely based on the structured clone algorithm. Functions
      * and DOM nodes are **not** cloned. The enumerable properties of `arguments` objects and
      * objects created by constructors other than `Object` are cloned to plain `Object` objects.
-     * See http://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm.
+     * See https://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm.
      *
      * @static
      * @memberOf _
@@ -5757,7 +5757,7 @@ function hasOwnProperty(obj, prop) {
      * Checks if `value` is, or can be coerced to, a finite number.
      *
      * Note: This is not the same as native `isFinite` which will return true for
-     * booleans and empty strings. See http://es5.github.io/#x15.1.2.5.
+     * booleans and empty strings. See https://es5.github.io/#x15.1.2.5.
      *
      * @static
      * @memberOf _
@@ -5824,9 +5824,9 @@ function hasOwnProperty(obj, prop) {
      */
     function isObject(value) {
       // check if the value is the ECMAScript language type of Object
-      // http://es5.github.io/#x8
+      // https://es5.github.io/#x8
       // and avoid a V8 bug
-      // http://code.google.com/p/v8/issues/detail?id=2291
+      // https://code.google.com/p/v8/issues/detail?id=2291
       return !!(value && objectTypes[typeof value]);
     }
 
@@ -5834,7 +5834,7 @@ function hasOwnProperty(obj, prop) {
      * Checks if `value` is `NaN`.
      *
      * Note: This is not the same as native `isNaN` which will return `true` for
-     * `undefined` and other non-numeric values. See http://es5.github.io/#x15.1.2.4.
+     * `undefined` and other non-numeric values. See https://es5.github.io/#x15.1.2.4.
      *
      * @static
      * @memberOf _
@@ -5884,7 +5884,7 @@ function hasOwnProperty(obj, prop) {
     /**
      * Checks if `value` is a number.
      *
-     * Note: `NaN` is considered a number. See http://es5.github.io/#x8.5.
+     * Note: `NaN` is considered a number. See https://es5.github.io/#x8.5.
      *
      * @static
      * @memberOf _
@@ -7262,7 +7262,7 @@ function hasOwnProperty(obj, prop) {
 
     /**
      * Creates an array of shuffled values, using a version of the Fisher-Yates
-     * shuffle. See http://en.wikipedia.org/wiki/Fisher-Yates_shuffle.
+     * shuffle. See https://en.wikipedia.org/wiki/Fisher-Yates_shuffle.
      *
      * @static
      * @memberOf _
@@ -8134,7 +8134,7 @@ function hasOwnProperty(obj, prop) {
         start = 0;
       }
       // use `Array(length)` so engines like Chakra and V8 avoid slower modes
-      // http://youtu.be/XAqIpGU8ZZk#t=17m25s
+      // https://youtu.be/XAqIpGU8ZZk#t=17m25s
       var index = -1,
           length = nativeMax(0, ceil((end - start) / (step || 1))),
           result = Array(length);
@@ -8424,7 +8424,7 @@ function hasOwnProperty(obj, prop) {
 
     /**
      * Creates an array that is the symmetric difference of the provided arrays.
-     * See http://en.wikipedia.org/wiki/Symmetric_difference.
+     * See https://en.wikipedia.org/wiki/Symmetric_difference.
      *
      * @static
      * @memberOf _
@@ -8625,7 +8625,7 @@ function hasOwnProperty(obj, prop) {
      * and prepends any additional `bindKey` arguments to those provided to the bound
      * function. This method differs from `_.bind` by allowing bound functions to
      * reference methods that will be redefined or don't yet exist.
-     * See http://michaux.ca/articles/lazy-function-definition-pattern.
+     * See https://michaux.ca/articles/lazy-function-definition-pattern.
      *
      * @static
      * @memberOf _
@@ -9402,7 +9402,7 @@ function hasOwnProperty(obj, prop) {
      * `value` is a hexadecimal, in which case a `radix` of `16` is used.
      *
      * Note: This method avoids differences in native ES3 and ES5 `parseInt`
-     * implementations. See http://es5.github.io/#E.
+     * implementations. See https://es5.github.io/#E.
      *
      * @static
      * @memberOf _
@@ -9547,13 +9547,13 @@ function hasOwnProperty(obj, prop) {
      * whitespace, and correctly escapes quotes within interpolated code.
      *
      * Note: In the development build, `_.template` utilizes sourceURLs for easier
-     * debugging. See http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl
+     * debugging. See https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl
      *
      * For more information on precompiling templates see:
-     * http://lodash.com/custom-builds
+     * https://lodash.com/custom-builds
      *
      * For more information on Chrome extension sandboxes see:
-     * http://developer.chrome.com/stable/extensions/sandboxingEval.html
+     * https://developer.chrome.com/stable/extensions/sandboxingEval.html
      *
      * @static
      * @memberOf _
@@ -9630,7 +9630,7 @@ function hasOwnProperty(obj, prop) {
      */
     function template(text, data, options) {
       // based on John Resig's `tmpl` implementation
-      // http://ejohn.org/blog/javascript-micro-templating/
+      // https://ejohn.org/blog/javascript-micro-templating/
       // and Laura Doktorova's doT.js
       // https://github.com/olado/doT
       var settings = lodash.templateSettings;
@@ -9709,7 +9709,7 @@ function hasOwnProperty(obj, prop) {
         'return __p\n}';
 
       // Use a sourceURL for easier debugging.
-      // http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl
+      // https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl
       var sourceURL = '\n/*\n//# sourceURL=' + (options.sourceURL || '/lodash/template/source[' + (templateCounter++) + ']') + '\n*/';
 
       try {
@@ -10169,7 +10169,7 @@ function hasOwnProperty(obj, prop) {
   if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
     // Expose Lo-Dash to the global object even when an AMD loader is present in
     // case Lo-Dash is loaded with a RequireJS shim config.
-    // See http://requirejs.org/docs/api.html#config-shim
+    // See https://requirejs.org/docs/api.html#config-shim
     root._ = _;
 
     // define as an anonymous module so, through path mapping, it can be

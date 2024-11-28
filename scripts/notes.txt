@@ -5,7 +5,7 @@ cat withuser.json | jq '[.[] | {id, location, project, subject, timestamp, user_
 
 to get largest id from live classifications db:
 
-curl 'http://live.zooniverse.org/classifications/10'  | jq '[.[] | .id] | max'
+curl 'https://live.zooniverse.org/classifications/10'  | jq '[.[] | .id] | max'
 
 to filter documents with id field less than or equal to 1808632
 jq '.[]  | select(.id > 1808632)'

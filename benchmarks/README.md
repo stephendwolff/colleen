@@ -1,8 +1,8 @@
 #Colleen Jmeter Benchmarking
 ##Setup
-Install jmeter from [apache](http://jmeter.apache.org/download_jmeter.cgi) or `brew install jmeter`, and the Standard and Extras plugin sets from the [jmeter plugins project](http://jmeter-plugins.org/). With a homebrew install, put the plugins jar files in `/usr/local/Cellar/jmeter/<version>/libexec/lib/ext`.
+Install jmeter from [apache](https://jmeter.apache.org/download_jmeter.cgi) or `brew install jmeter`, and the Standard and Extras plugin sets from the [jmeter plugins project](https://jmeter-plugins.org/). With a homebrew install, put the plugins jar files in `/usr/local/Cellar/jmeter/<version>/libexec/lib/ext`.
 
-Configure jmeter using [this guide](http://www.ubik-ingenierie.com/blog/automatically-generating-nice-graphs-at-end-of-your-load-test-with-apache-jmeter-and-jmeter-plugins/)
+Configure jmeter using [this guide](https://www.ubik-ingenierie.com/blog/automatically-generating-nice-graphs-at-end-of-your-load-test-with-apache-jmeter-and-jmeter-plugins/)
 
 Add these properties to the jmeter `user.properties` file, which is in `/usr/local/Cellar/jmeter/<version>/libexec/bin/user.properties` when using homebrew:
 
@@ -39,7 +39,7 @@ The jmeter file `colleen_local_cli.jmx` contains thread groups simulating browse
 There is a bash script called `run-bench.sh` in this folder that allocates more memory, runs jmeter in cli mode, and generates graphs after the run is complete in the `results` folder.
 
 ##Database benchmarking
-As well as web tests, jmeter can also run tests aginst database servers directly. For mysql you will need to download and install the [MySQL JDBC driver](http://dev.mysql.com/downloads/connector/j/) jar file in `/usr/local/Cellar/jmeter/<version>/libexec/lib`.
+As well as web tests, jmeter can also run tests aginst database servers directly. For mysql you will need to download and install the [MySQL JDBC driver](https://dev.mysql.com/downloads/connector/j/) jar file in `/usr/local/Cellar/jmeter/<version>/libexec/lib`.
 
 Add a "JDBC Connection Configuration" object and set these connection params:
 

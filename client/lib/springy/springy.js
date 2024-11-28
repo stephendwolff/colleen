@@ -629,7 +629,7 @@
 	// Layout.ForceDirected.Spring.prototype.distanceToPoint = function(point)
 	// {
 	// 	// hardcore vector arithmetic.. ohh yeah!
-	// 	// .. see http://stackoverflow.com/questions/849211/shortest-distance-between-a-point-and-a-line-segment/865080#865080
+	// 	// .. see https://stackoverflow.com/questions/849211/shortest-distance-between-a-point-and-a-line-segment/865080#865080
 	// 	var n = this.point2.p.subtract(this.point1.p).normalise().normal();
 	// 	var ac = point.p.subtract(this.point1.p);
 	// 	return Math.abs(ac.x * n.x + ac.y * n.y);

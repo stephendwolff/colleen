@@ -503,7 +503,7 @@
   hsi2rgb = function(h, s, i) {
     /*
     borrowed from here:
-    http://hummer.stanford.edu/museinfo/doc/examples/humdrum/keyscape2/hsi2rgb.cpp
+    https://hummer.stanford.edu/museinfo/doc/examples/humdrum/keyscape2/hsi2rgb.cpp
     */
 
     var b, g, r, _ref;
@@ -723,7 +723,7 @@
   rgb2hsi = function() {
     /*
     borrowed from here:
-    http://hummer.stanford.edu/museinfo/doc/examples/humdrum/keyscape2/rgb2hsi.cpp
+    https://hummer.stanford.edu/museinfo/doc/examples/humdrum/keyscape2/rgb2hsi.cpp
     */
 
     var TWOPI, b, g, h, i, min, r, s, _ref;
@@ -1276,7 +1276,7 @@
     } else if (mode.substr(0, 1) === 'k') {
       /*
       implementation based on
-      http://code.google.com/p/figue/source/browse/trunk/figue.js#336
+      https://code.google.com/p/figue/source/browse/trunk/figue.js#336
       simplified for 1-d input values
       */
 
@@ -1372,7 +1372,7 @@
   	Licensed under the Apache License, Version 2.0 (the "License"); 
   	you may not use this file except in compliance with the License.
   	You may obtain a copy of the License at	
-  	http://www.apache.org/licenses/LICENSE-2.0
+  	https://www.apache.org/licenses/LICENSE-2.0
   
   	Unless required by applicable law or agreed to in writing, software distributed
   	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
@@ -1426,7 +1426,7 @@
   /**
   	X11 color names
   
-  	http://www.w3.org/TR/css3-color/#svg-color
+  	https://www.w3.org/TR/css3-color/#svg-color
   */
 
 

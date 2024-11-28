@@ -48,14 +48,14 @@ d. Default Styles
    z-index: 99999;
    height: 100%;
 }
-#status  {    
+#status  {
    position: absolute;
    left: 50%;
    top: 50%;
    width: 64px;
    height: 64px;
-   margin: -32px 0 0 -32px;  
-   padding: 0;    
+   margin: -32px 0 0 -32px;
+   padding: 0;
 }
 
 /* ------------------------------------------------------------------
@@ -150,8 +150,8 @@ table {
 /* ------------------------------------------------------------------ */
 /* d. Default and Basic Styles
       Adapted from:
-      Skeleton CSS Framework - http://www.getskeleton.com/
-      Typeplate Typographic Starter Kit - http://typeplate.com/
+      Skeleton CSS Framework - https://www.getskeleton.com/
+      Typeplate Typographic Starter Kit - https://typeplate.com/
 /* ------------------------------------------------------------------ */
 
 /* 1. Basic  ------------------------------------------------------- */
@@ -492,9 +492,9 @@ input[type="button"] {
    font: 14px/24px 'montserrat-bold', sans-serif;
    background: #E29344;
    color: #fff;
-   display: inline-block;   
+   display: inline-block;
 	text-decoration: none;
-   letter-spacing: 0;   
+   letter-spacing: 0;
 	padding: 12px 20px;
 	margin-bottom: 18px;
    border: none;
@@ -750,7 +750,7 @@ properly.
       padding: 0;
 	}
    .column, .columns {
-	   width: auto !important;      
+	   width: auto !important;
 	   float: none;
 	   margin-left: 0;
 	   margin-right: 0;
@@ -796,7 +796,7 @@ properly.
 /* ------------------------------------------------------------------ */
 
 /*  1. Clearing
-    (http://nicolasgallagher.com/micro-clearfix-hack/
+    (https://nicolasgallagher.com/micro-clearfix-hack/
 --------------------------------------------------------------------- */
 
 .cf:before,

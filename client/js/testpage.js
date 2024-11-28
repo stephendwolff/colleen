@@ -223,9 +223,9 @@ exports.colors = [
  */
 
 function useColors() {
-  // is webkit? http://stackoverflow.com/a/16459606/376773
+  // is webkit? https://stackoverflow.com/a/16459606/376773
   return ('WebkitAppearance' in document.documentElement.style) ||
-    // is firebug? http://stackoverflow.com/a/398120/376773
+    // is firebug? https://stackoverflow.com/a/398120/376773
     (window.console && (console.firebug || (console.exception && console.table))) ||
     // is firefox >= v31?
     // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
@@ -650,14 +650,14 @@ function plural(ms, n, name) {
 },{}],5:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.1
- * http://jquery.com/
+ * https://jquery.com/
  *
  * Includes Sizzle.js
- * http://sizzlejs.com/
+ * https://sizzlejs.com/
  *
  * Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
  * Released under the MIT license
- * http://jquery.org/license
+ * https://jquery.org/license
  *
  * Date: 2014-05-01T17:11Z
  */
@@ -1199,11 +1199,11 @@ function isArraylike( obj ) {
 var Sizzle =
 /*!
  * Sizzle CSS Selector Engine v1.10.19
- * http://sizzlejs.com/
+ * https://sizzlejs.com/
  *
  * Copyright 2013 jQuery Foundation, Inc. and other contributors
  * Released under the MIT license
- * http://jquery.org/license
+ * https://jquery.org/license
  *
  * Date: 2014-04-18
  */
@@ -1273,17 +1273,17 @@ var i,
 
 	// Regular expressions
 
-	// Whitespace characters http://www.w3.org/TR/css3-selectors/#whitespace
+	// Whitespace characters https://www.w3.org/TR/css3-selectors/#whitespace
 	whitespace = "[\\x20\\t\\r\\n\\f]",
-	// http://www.w3.org/TR/css3-syntax/#characters
+	// https://www.w3.org/TR/css3-syntax/#characters
 	characterEncoding = "(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",
 
 	// Loosely modeled on CSS identifier characters
-	// An unquoted value should be a CSS identifier http://www.w3.org/TR/css3-selectors/#attribute-selectors
-	// Proper syntax: http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
+	// An unquoted value should be a CSS identifier https://www.w3.org/TR/css3-selectors/#attribute-selectors
+	// Proper syntax: https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
 	identifier = characterEncoding.replace( "w", "w#" ),
 
-	// Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
+	// Attribute selectors: https://www.w3.org/TR/selectors/#attribute-selectors
 	attributes = "\\[" + whitespace + "*(" + characterEncoding + ")(?:" + whitespace +
 		// Operator (capture 2)
 		"*([*^$|!~]?=)" + whitespace +
@@ -1339,7 +1339,7 @@ var i,
 	rsibling = /[+~]/,
 	rescape = /'|\\/g,
 
-	// CSS escapes http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
+	// CSS escapes https://www.w3.org/TR/CSS21/syndata.html#escaped-characters
 	runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
 	funescape = function( _, escaped, escapedWhitespace ) {
 		var high = "0x" + escaped - 0x10000;
@@ -1808,7 +1808,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// We allow this because of a bug in IE8/9 that throws an error
 	// whenever `document.activeElement` is accessed on an iframe
 	// So, we allow :focus to pass through QSA all the time to avoid the IE error
-	// See http://bugs.jquery.com/ticket/13378
+	// See https://bugs.jquery.com/ticket/13378
 	rbuggyQSA = [];
 
 	if ( (support.qsa = rnative.test( doc.querySelectorAll )) ) {
@@ -1819,13 +1819,13 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// This is to test IE's treatment of not explicitly
 			// setting a boolean content attribute,
 			// since its presence should be enough
-			// http://bugs.jquery.com/ticket/12359
+			// https://bugs.jquery.com/ticket/12359
 			div.innerHTML = "<select msallowclip=''><option selected=''></option></select>";
 
 			// Support: IE8, Opera 11-12.16
 			// Nothing should be selected when empty strings follow ^= or $= or *=
 			// The test attribute must be unknown in Opera but "safe" for WinRT
-			// http://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
+			// https://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
 			if ( div.querySelectorAll("[msallowclip^='']").length ) {
 				rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
 			}
@@ -1837,7 +1837,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			}
 
 			// Webkit/Opera - :checked should return selected option elements
-			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
+			// https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
 			// IE8 throws error here and will not see later tests
 			if ( !div.querySelectorAll(":checked").length ) {
 				rbuggyQSA.push(":checked");
@@ -2386,7 +2386,7 @@ Expr = Sizzle.selectors = {
 
 		"PSEUDO": function( pseudo, argument ) {
 			// pseudo-class names are case-insensitive
-			// http://www.w3.org/TR/selectors/#pseudo-classes
+			// https://www.w3.org/TR/selectors/#pseudo-classes
 			// Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
 			// Remember that setFilters inherits from pseudos
 			var args,
@@ -2470,7 +2470,7 @@ Expr = Sizzle.selectors = {
 		// or beginning with the identifier C immediately followed by "-".
 		// The matching of C against the element's language value is performed case-insensitively.
 		// The identifier C does not have to be a valid language name."
-		// http://www.w3.org/TR/selectors/#lang-pseudo
+		// https://www.w3.org/TR/selectors/#lang-pseudo
 		"lang": markFunction( function( lang ) {
 			// lang value must be a valid identifier
 			if ( !ridentifier.test(lang || "") ) {
@@ -2517,7 +2517,7 @@ Expr = Sizzle.selectors = {
 
 		"checked": function( elem ) {
 			// In CSS3, :checked should return both checked and selected elements
-			// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
+			// https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
 			var nodeName = elem.nodeName.toLowerCase();
 			return (nodeName === "input" && !!elem.checked) || (nodeName === "option" && !!elem.selected);
 		},
@@ -2534,7 +2534,7 @@ Expr = Sizzle.selectors = {
 
 		// Contents
 		"empty": function( elem ) {
-			// http://www.w3.org/TR/selectors/#empty-pseudo
+			// https://www.w3.org/TR/selectors/#empty-pseudo
 			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
 			//   but not by others (comment: 8; processing instruction: 7; etc.)
 			// nodeType < 6 works because attributes (2) do not appear as children
@@ -3187,7 +3187,7 @@ support.sortDetached = assert(function( div1 ) {
 
 // Support: IE<8
 // Prevent attribute/property "interpolation"
-// http://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
+// https://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
 if ( !assert(function( div ) {
 	div.innerHTML = "<a href='#'></a>";
 	return div.firstChild.getAttribute("href") === "#" ;
@@ -4064,7 +4064,7 @@ jQuery.ready.promise = function( obj ) {
 
 		// Catch cases where $(document).ready() is called after the browser event has already occurred.
 		// we once tried to use readyState "interactive" here, but it caused issues like the one
-		// discovered by ChrisS here: http://bugs.jquery.com/ticket/12282#comment:15
+		// discovered by ChrisS here: https://bugs.jquery.com/ticket/12282#comment:15
 		if ( document.readyState === "complete" ) {
 			// Handle it asynchronously to allow scripts the opportunity to delay ready
 			setTimeout( jQuery.ready );
@@ -5327,7 +5327,7 @@ jQuery.Event = function( src, props ) {
 };
 
 // jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
-// http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
+// https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
 jQuery.Event.prototype = {
 	isDefaultPrevented: returnFalse,
 	isPropagationStopped: returnFalse,
@@ -5674,7 +5674,7 @@ jQuery.extend({
 		if ( !support.noCloneChecked && ( elem.nodeType === 1 || elem.nodeType === 11 ) &&
 				!jQuery.isXMLDoc( elem ) ) {
 
-			// We eschew Sizzle here for performance reasons: http://jsperf.com/getall-vs-sizzle/2
+			// We eschew Sizzle here for performance reasons: https://jsperf.com/getall-vs-sizzle/2
 			destElements = getAll( clone );
 			srcElements = getAll( elem );
 
@@ -6190,7 +6190,7 @@ function curCSS( elem, name, computed ) {
 		// Support: iOS < 6
 		// A tribute to the "awesome hack by Dean Edwards"
 		// iOS < 6 (at least) returns percentage for a larger set of values, but width seems to be reliably pixels
-		// this is against the CSSOM draft spec: http://dev.w3.org/csswg/cssom/#resolved-values
+		// this is against the CSSOM draft spec: https://dev.w3.org/csswg/cssom/#resolved-values
 		if ( rnumnonpx.test( ret ) && rmargin.test( name ) ) {
 
 			// Remember the original values
@@ -7515,7 +7515,7 @@ jQuery.fx.speeds = {
 
 
 // Based off of the plugin by Clint Helfers, with permission.
-// http://blindsignals.com/index.php/2009/07/jquery-delay/
+// https://blindsignals.com/index.php/2009/07/jquery-delay/
 jQuery.fn.delay = function( time, type ) {
 	time = jQuery.fx ? jQuery.fx.speeds[ time ] || time : time;
 	type = type || "fx";
@@ -9843,12 +9843,12 @@ return jQuery;
 (function (global){
 /**
  * @license
- * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+ * Lo-Dash 2.4.1 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern -o ./dist/lodash.js`
- * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+ * Copyright 2012-2013 The Dojo Foundation <https://dojofoundation.org/>
+ * Based on Underscore.js 1.5.2 <https://underscorejs.org/LICENSE>
  * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <http://lodash.com/license>
+ * Available under MIT license <https://lodash.com/license>
  */
 ;(function() {
 
@@ -9890,7 +9890,7 @@ return jQuery;
 
   /**
    * Used to match ES6 template delimiters
-   * http://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-string-literals
+   * https://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-string-literals
    */
   var reEsTemplate = /\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g;
 
@@ -10121,7 +10121,7 @@ return jQuery;
     // `a` and `b`. See https://github.com/jashkenas/underscore/pull/1247
     //
     // This also ensures a stable sort in V8 and other engines.
-    // See http://code.google.com/p/v8/issues/detail?id=90
+    // See https://code.google.com/p/v8/issues/detail?id=90
     return a.index - b.index;
   }
 
@@ -10276,7 +10276,7 @@ return jQuery;
     // Avoid issues with some ES3 environments that attempt to use values, named
     // after built-in constructors like `Object`, for the creation of literals.
     // ES5 clears this up by stating that literals must use built-in constructors.
-    // See http://es5.github.io/#x11.1.5.
+    // See https://es5.github.io/#x11.1.5.
     context = context ? _.defaults(root.Object(), context, _.pick(root, contextProps)) : root;
 
     /** Native constructor references */
@@ -10553,7 +10553,7 @@ return jQuery;
 
       function bound() {
         // `Function#bind` spec
-        // http://es5.github.io/#x15.3.4.5
+        // https://es5.github.io/#x15.3.4.5
         if (partialArgs) {
           // avoid `arguments` object deoptimizations by using `slice` instead
           // of `Array.prototype.slice.call` and not assigning `arguments` to a
@@ -10562,7 +10562,7 @@ return jQuery;
           push.apply(args, arguments);
         }
         // mimic the constructor's `return` behavior
-        // http://es5.github.io/#x13.2.2
+        // https://es5.github.io/#x13.2.2
         if (this instanceof bound) {
           // ensure `new bound` is an instance of `func`
           var thisBinding = baseCreate(func.prototype),
@@ -10916,7 +10916,7 @@ return jQuery;
         return false;
       }
       // exit early for `null` and `undefined` avoiding ES3's Function#call behavior
-      // http://es5.github.io/#x15.3.4.4
+      // https://es5.github.io/#x15.3.4.4
       if (a == null || b == null) {
         return a === b;
       }
@@ -10949,7 +10949,7 @@ return jQuery;
 
         case regexpClass:
         case stringClass:
-          // coerce regexes to strings (http://es5.github.io/#x15.10.6.4)
+          // coerce regexes to strings (https://es5.github.io/#x15.10.6.4)
           // treat string primitives and their corresponding object instances as equal
           return a == String(b);
       }
@@ -10980,7 +10980,7 @@ return jQuery;
       }
       // assume cyclic structures are equal
       // the algorithm for detecting cyclic structures is adapted from ES 5.1
-      // section 15.12.3, abstract operation `JO` (http://es5.github.io/#x15.12.3)
+      // section 15.12.3, abstract operation `JO` (https://es5.github.io/#x15.12.3)
       var initedStack = !stackA;
       stackA || (stackA = getArray());
       stackB || (stackB = getArray());
@@ -11470,7 +11470,7 @@ return jQuery;
      * Though the `>` character is escaped for symmetry, characters like `>` and `/`
      * don't require escaping in HTML and have no special meaning unless they're part
      * of a tag or an unquoted attribute value.
-     * http://mathiasbynens.be/notes/ambiguous-ampersands (under "semi-related fun fact")
+     * https://mathiasbynens.be/notes/ambiguous-ampersands (under "semi-related fun fact")
      */
     var htmlEscapes = {
       '&': '&amp;',
@@ -11606,7 +11606,7 @@ return jQuery;
      * Note: This method is loosely based on the structured clone algorithm. Functions
      * and DOM nodes are **not** cloned. The enumerable properties of `arguments` objects and
      * objects created by constructors other than `Object` are cloned to plain `Object` objects.
-     * See http://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm.
+     * See https://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm.
      *
      * @static
      * @memberOf _
@@ -12189,7 +12189,7 @@ return jQuery;
      * Checks if `value` is, or can be coerced to, a finite number.
      *
      * Note: This is not the same as native `isFinite` which will return true for
-     * booleans and empty strings. See http://es5.github.io/#x15.1.2.5.
+     * booleans and empty strings. See https://es5.github.io/#x15.1.2.5.
      *
      * @static
      * @memberOf _
@@ -12256,9 +12256,9 @@ return jQuery;
      */
     function isObject(value) {
       // check if the value is the ECMAScript language type of Object
-      // http://es5.github.io/#x8
+      // https://es5.github.io/#x8
       // and avoid a V8 bug
-      // http://code.google.com/p/v8/issues/detail?id=2291
+      // https://code.google.com/p/v8/issues/detail?id=2291
       return !!(value && objectTypes[typeof value]);
     }
 
@@ -12266,7 +12266,7 @@ return jQuery;
      * Checks if `value` is `NaN`.
      *
      * Note: This is not the same as native `isNaN` which will return `true` for
-     * `undefined` and other non-numeric values. See http://es5.github.io/#x15.1.2.4.
+     * `undefined` and other non-numeric values. See https://es5.github.io/#x15.1.2.4.
      *
      * @static
      * @memberOf _
@@ -12316,7 +12316,7 @@ return jQuery;
     /**
      * Checks if `value` is a number.
      *
-     * Note: `NaN` is considered a number. See http://es5.github.io/#x8.5.
+     * Note: `NaN` is considered a number. See https://es5.github.io/#x8.5.
      *
      * @static
      * @memberOf _
@@ -13694,7 +13694,7 @@ return jQuery;
 
     /**
      * Creates an array of shuffled values, using a version of the Fisher-Yates
-     * shuffle. See http://en.wikipedia.org/wiki/Fisher-Yates_shuffle.
+     * shuffle. See https://en.wikipedia.org/wiki/Fisher-Yates_shuffle.
      *
      * @static
      * @memberOf _
@@ -14566,7 +14566,7 @@ return jQuery;
         start = 0;
       }
       // use `Array(length)` so engines like Chakra and V8 avoid slower modes
-      // http://youtu.be/XAqIpGU8ZZk#t=17m25s
+      // https://youtu.be/XAqIpGU8ZZk#t=17m25s
       var index = -1,
           length = nativeMax(0, ceil((end - start) / (step || 1))),
           result = Array(length);
@@ -14856,7 +14856,7 @@ return jQuery;
 
     /**
      * Creates an array that is the symmetric difference of the provided arrays.
-     * See http://en.wikipedia.org/wiki/Symmetric_difference.
+     * See https://en.wikipedia.org/wiki/Symmetric_difference.
      *
      * @static
      * @memberOf _
@@ -15057,7 +15057,7 @@ return jQuery;
      * and prepends any additional `bindKey` arguments to those provided to the bound
      * function. This method differs from `_.bind` by allowing bound functions to
      * reference methods that will be redefined or don't yet exist.
-     * See http://michaux.ca/articles/lazy-function-definition-pattern.
+     * See https://michaux.ca/articles/lazy-function-definition-pattern.
      *
      * @static
      * @memberOf _
@@ -15834,7 +15834,7 @@ return jQuery;
      * `value` is a hexadecimal, in which case a `radix` of `16` is used.
      *
      * Note: This method avoids differences in native ES3 and ES5 `parseInt`
-     * implementations. See http://es5.github.io/#E.
+     * implementations. See https://es5.github.io/#E.
      *
      * @static
      * @memberOf _
@@ -15979,13 +15979,13 @@ return jQuery;
      * whitespace, and correctly escapes quotes within interpolated code.
      *
      * Note: In the development build, `_.template` utilizes sourceURLs for easier
-     * debugging. See http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl
+     * debugging. See https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl
      *
      * For more information on precompiling templates see:
-     * http://lodash.com/custom-builds
+     * https://lodash.com/custom-builds
      *
      * For more information on Chrome extension sandboxes see:
-     * http://developer.chrome.com/stable/extensions/sandboxingEval.html
+     * https://developer.chrome.com/stable/extensions/sandboxingEval.html
      *
      * @static
      * @memberOf _
@@ -16062,7 +16062,7 @@ return jQuery;
      */
     function template(text, data, options) {
       // based on John Resig's `tmpl` implementation
-      // http://ejohn.org/blog/javascript-micro-templating/
+      // https://ejohn.org/blog/javascript-micro-templating/
       // and Laura Doktorova's doT.js
       // https://github.com/olado/doT
       var settings = lodash.templateSettings;
@@ -16141,7 +16141,7 @@ return jQuery;
         'return __p\n}';
 
       // Use a sourceURL for easier debugging.
-      // http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl
+      // https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl
       var sourceURL = '\n/*\n//# sourceURL=' + (options.sourceURL || '/lodash/template/source[' + (templateCounter++) + ']') + '\n*/';
 
       try {
@@ -16601,7 +16601,7 @@ return jQuery;
   if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
     // Expose Lo-Dash to the global object even when an AMD loader is present in
     // case Lo-Dash is loaded with a RequireJS shim config.
-    // See http://requirejs.org/docs/api.html#config-shim
+    // See https://requirejs.org/docs/api.html#config-shim
     root._ = _;
 
     // define as an anonymous module so, through path mapping, it can be

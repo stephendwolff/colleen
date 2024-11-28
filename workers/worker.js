@@ -16,7 +16,7 @@ if (process.env.NODE_ENV == 'test') {
     nconf.overrides({'WNU_DB_URL': process.env.WNU_TEST_DB_URL});
 }
 
-// config files take precedence over command-line arguments and environment variables 
+// config files take precedence over command-line arguments and environment variables
 
 nconf.file({ file:
     'config/' + process.env.NODE_ENV + '.json'
@@ -274,7 +274,7 @@ function fetchRequest(projectId,fromMs,toMs){
 
     var perPage = gClassificationsPerPage; // 5000
     var options = {
-        url: 'http://event.zooniverse.org/classifications/'+projectId,
+        url: 'https://event.zooniverse.org/classifications/'+projectId,
         qs:{'from':fromMs, 'to':toMs,'per_page':perPage,'page':0},
         timeout:20*1000,
         headers: {
@@ -406,13 +406,13 @@ function setProjectsUpdateTime(projectId,updateMs){
 function fetchProjectDataTest(){
 
     //curl -H "Accept: application/vnd.zooevents.v1+json"
-    //"http://event.zooniverse.org/classifications/galaxy_zoo?from=1399939200000&to=1400025600000&per_page=200&page=1"
+    //"https://event.zooniverse.org/classifications/galaxy_zoo?from=1399939200000&to=1400025600000&per_page=200&page=1"
 
     var from = 1401235200000, to = 1401321600000; // 2014/05/28 00:00 to 2014/05/29 00:00
 
     var options = {
-        //url: 'http://event.zooniverse.org/classifications/galaxy_zoo?from=1399982400000&to=1399983000000&per_page=10&page=0',
-        url: 'http://event.zooniverse.org/classifications/galaxy_zoo',
+        //url: 'https://event.zooniverse.org/classifications/galaxy_zoo?from=1399982400000&to=1399983000000&per_page=10&page=0',
+        url: 'https://event.zooniverse.org/classifications/galaxy_zoo',
         qs:{'from':from, 'to':to,'per_page':1000,'page':0},
         headers: {
             'Accept': 'application/vnd.zooevents.v1+json'
